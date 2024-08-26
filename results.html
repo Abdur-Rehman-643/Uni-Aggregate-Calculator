@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Results</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>All Students Aggregates</h1>
+      <table id="resultsTable">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Aggregate</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button type="button" style="margin-top: 1rem;">
+        <a href="index.html">Back to Registration</a>
+      </button>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const students = JSON.parse(localStorage.getItem('students')) || [];
+        const tableBody = document.querySelector('#resultsTable tbody');
+        
+        students.forEach(student => {
+          const row = document.createElement('tr');
+          const nameCell = document.createElement('td');
+          const aggregateCell = document.createElement('td');
+
+          nameCell.textContent = student.name;
+          aggregateCell.textContent = student.aggregate;
+
+          row.appendChild(nameCell);
+          row.appendChild(aggregateCell);
+          tableBody.appendChild(row);
+        });
+      });
+    </script>
+  </body>
+</html>

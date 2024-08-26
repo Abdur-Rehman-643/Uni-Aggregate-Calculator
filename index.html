@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Student Registration</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>University Student Registration</h1>
+      <form id="registrationForm" onsubmit="event.preventDefault(); aggregateCalculateAndCheck();">
+        <div class="form-group">
+          <label for="studentName">Student Name</label>
+          <input type="text" id="studentName" name="studentName" required />
+        </div>
+        <div class="form-group">
+          <label for="rollNo">Roll No.</label>
+          <input type="text" id="rollNo" name="rollNo" required />
+        </div>
+        <div class="form-group">
+          <label for="matricMarks">Matric Marks</label>
+          <input type="number" id="matricMarks" name="matricMarks" required />
+        </div>
+        <div class="form-group">
+          <label for="fscMarks">FSC Marks</label>
+          <input type="number" id="fscMarks" name="fscMarks" required />
+        </div>
+        <div class="form-group">
+          <label for="entryTestMarks">Entry Test Marks</label>
+          <input type="number" id="entryTestMarks" name="entryTestMarks" required />
+        </div>
+        <button type="submit">Submit</button>
+        <button type="button" style="margin-top: 1rem;">
+          <a href="results.html" style="text-decoration: none; color: white;">See All Results</a>
+        </button>
+      </form>
+      <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
